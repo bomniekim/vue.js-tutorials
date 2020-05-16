@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var vm = new Vue({ // 생성자 함수의 파라미터로 객체 리터럴을 넣어줌
+            el: '#app', // Dom control 시 뷰의 기능과 속성들을 사용할 수 있게 함
+            data: {
+                msg: "hello"
+            },
+            methods: {},
+            created: {},
+        });
+    </script>
+</body>
+</html>
