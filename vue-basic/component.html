@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Component</title>
+    <!-- 화면을 영역별로 구분하여 코드로 관리하여 '재사용성'을 높임 -->
+</head>
+<body>
+    <div id="app">
+        <app-header></app-header>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        // 전역 컴포넌트 (global component)
+        // Vue.component(컴포넌트 이름, 컴포넌트 내용);
+        Vue.component('app-header', {
+            template: '<h1>header</h1>'
+        });
+
+
+        // 인스턴스를 생성하면 기본적으로 Root component
+        new Vue({
+            el: '#app'
+        });
+    </script>
+    
+</body>
+</html>
