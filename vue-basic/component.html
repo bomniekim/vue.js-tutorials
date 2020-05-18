@@ -9,6 +9,15 @@
 <body>
     <div id="app">
         <app-header></app-header>
+        <app-content></app-content>
+        <app-footer></app-footer>
+    </div>
+
+    <div id="app2">
+        <app-header></app-header> 
+        <!-- 전역 컴포넌트는 모든 인스턴스에서 사용할 수 있음 -->
+        <app-footer></app-footer> <!-- error -->
+        <!-- 지역 컴포넌트는 선언한 인스턴스 내에서만 사용 가능-->
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -18,13 +27,33 @@
         Vue.component('app-header', {
             template: '<h1>header</h1>'
         });
+        Vue.component('app-content', {
+            template: '<div>content</div>'
+        });
 
 
         // 인스턴스를 생성하면 기본적으로 Root component
         new Vue({
-            el: '#app'
+            el: '#app',
+            components: {
+                // 지역 컴포넌트 (local component)
+                // '컴포넌트 이름' : '컴포넌트 내용'
+                'app-footer': {
+                    template: '<footer>footer</footer>'
+                }
+            }
         });
-    </script>
+
+        new Vue({
+            el: '#app2',
+            // 지역 컴포넌트는 다른 인스턴스에서 사용할 수 없음
+            components: {
+
+            }
+
+
+        });
+        </script>
     
 </body>
 </html>
