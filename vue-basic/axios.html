@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Axios</title>
+</head>
+
+<body>
+    <div id="app">
+        <button v-on:click="getData">get user</button>
+
+        <!-- data binding -->
+        <div>{{users}}</div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- Axios CDN -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script>
+        // Axios: Vue에서 가장 많이 사용하는 HTTP 통신 라이브러리 (Promise 기반)
+
+        new Vue({
+            el: '#app',
+            data: {
+                users: []
+            },
+            methods: {
+                getData: function () {
+                    var vm = this; // this = Vue
+                    console.log(this);
+                    // async using Axios library
+                    axios.get('https://jsonplaceholder.typicode.com/users/')
+                        .then(function (response) {
+                            console.log(response.data);
+                            // console.log(this); // this = Window
+
+                            // axios.get()을 호출하기 전의 this(Vue)와 
+                            // 실행한 후 들어오는 콜백함수의 실행 컨텍스트 this(Window)는 서로 다르다.
+
+                            // 이를 해결하기 위해 this(Vue)를 변수 vm에 담아 사용
+                            vm.users = response.data;
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
