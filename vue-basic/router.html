@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            <!-- router에서 페이지 이동을 위한 link tag -->
+            <router-link to="/login">Login</router-link>
+            <!-- <a href="/login">Login</a> 위의 코드와 같은 의미 -->
+            <router-link to="/main">Main</router-link>
+        </div>
+        <router-view></router-view>
+    </div>
+
+    <!-- vue.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- vue-router CDN -->
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+
+    <script>
+        var LoginComponent = {
+            template: '<div>login</div>'
+        }
+        var MainComponent = {
+            template: '<div>Main</div>'
+        }
+
+
+        // VueRouter instance
+        var vueRouter = new VueRouter({
+            // url # 제거
+            mode: "history",
+            // 페이지의 개수만큼 객체의 개수 필요 
+            routes:
+                // 페이지의 라우팅 정보 (배열 타입)
+                [
+                    {
+                        // 페이지의 url
+                        path: '/login',
+                        // 해당 url에서 표시될 컴포넌트 (1개)
+                        component: LoginComponent
+                    },
+                    {
+                        path: '/main',
+                        component: MainComponent
+                    }
+                ]
+        });
+
+
+        // Vue instance
+        new Vue({
+            el: '#app',
+            // vue instance에 router 연결
+            router: vueRouter
+        });
+    </script>
+</body>
+
+</html>
