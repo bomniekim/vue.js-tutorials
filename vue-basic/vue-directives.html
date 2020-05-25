@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template Syntax: data-binding/directive</title>
+</head>
+
+<body>
+    <div id="app">
+        <!--
+        Vue directive
+        : HTML 태그의 속성에 'v-' 접두사가 붙은 특별한 속성으로 화면의 DOM 조작을 쉽게할 수 있는 문법
+         -->
+
+        <div v-if="loading">
+            Loading..
+        </div>
+        <div v-else>
+            Test user has been logged in!
+        </div>
+
+        <div v-show="loading">
+            <!-- v-if/else와의 차이? -->
+            <!-- 값이 false인 경우 display: none으로 설정됨 -->
+            v-show test
+        </div>
+
+
+        <!-- v-model: 폼 입력 바인딩 -->
+        <input type="text" v-model="msg" placeholder="write here">
+        <p>you wrote {{msg}}</p>
+        <!-- data-binding이 되어 바로 동기화 -->
+
+
+        <!-- v-on: 이벤트 핸들링 -->
+        <!-- <button v-on:click="메소드 이름">click me</button> -->
+        <button v-on:click="logText">click me</button>
+        <input type="text" v-on:keyup.enter="logText">
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                loading: true,
+                msg: '',
+            },
+            methods: {
+                logText: function () {
+                    console.log('clicked!');
+
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
