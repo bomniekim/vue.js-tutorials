@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template Syntax: data-binding/directive</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 
+        Data Binding
+        {{ }} : Mustache Tag(콧수염 태그) -->
+
+        <p v-bind:id="uuid" v-bind:class="name">{{num}}</p>
+        <!-- <p id="abc1234">{{num}}</p> -->
+        <p>{{doubleNum}}</p>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                num: 10,
+                uuid: 'abc1234',
+                name: 'text-blue',
+            },
+            // 계산된 속성
+            computed: {
+                doubleNum: function () {
+                    return this.num * 2;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
