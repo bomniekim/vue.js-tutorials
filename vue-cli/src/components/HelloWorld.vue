@@ -75,6 +75,7 @@ export default {
   name: "HelloWorld",
   // props validation
   // props: ['msg']
+  // Prop은 가능한 상세하게 정의 (우선순위 A)
   props: {
     msg: String
   }
