@@ -28,3 +28,5 @@ export default {
 <style>
 /* css */
 </style>
+
+// template , script, style
