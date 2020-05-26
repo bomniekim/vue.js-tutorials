@@ -7,9 +7,8 @@ Vue.config.productionTip = false;
 var App = {
   template: "<div>app</div>",
 
-
 new Vue({
-  render: (h) => h(App),
+  el: '#app'
   components: {
     app: App,
   },
@@ -17,14 +16,7 @@ new Vue({
 */
 
 new Vue({
+  // render: template 정의 시 실행
+  // App이라는 컴포넌트를 가져와 render
   render: (h) => h(App),
 }).$mount("#app");
-
-/*
-  new Vue({
-    el: '#app',
-    components: {
-      'app': App
-    }
-  });
-*/
