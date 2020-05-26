@@ -2,6 +2,9 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png" />
     <HelloWorld msg="Welcome to Your Vue.js App" />
+    <!-- 스타일 가이드 (우선규칙 B) -->
+    <!-- <hello-world></hello-world>
+    <HelloWorld/> self-closing-->
   </div>
 </template>
 
