@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        {{ num }}
+        {{ doubleNum }}
+        <button v-on:click="increaseNum">Increase</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                num: 10
+            },
+            // computed: validation이나 간단한 텍스트 연산에 적합
+            computed: {
+                // computed에 정의하는 익명함수는 반드시 값을 리턴하도록 작성되야 함
+                doubleNum: function () {
+                    return this.num * 2;
+                }
+            },
+            // watch: 데이터 요청 등의 무거운 로직에 적합 (methods와 엮어주어도 좋음)
+            // Vue 인스턴스의 특정 프로퍼티가 변경될 때 지정한 콜백함수가 실행되는 기능
+            watch: {
+                num: function (newValue, oldVlue) {
+                    this.logText(newValue, oldVlue);
+                }
+            },
+            methods: {
+                increaseNum: function () {
+                    this.num += 1;
+                },
+                logText: function (after, before) {
+                    console.log('changed : ' + before + ' -> ' + after);
+                    //axios.get(after); // async
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
+
+<!-- * it is often a better idea to use a computed property rather than an imperative watch callback.  -->
