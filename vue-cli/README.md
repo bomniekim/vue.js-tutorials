@@ -23,4 +23,4 @@ npm run lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-<span style="color:rgb(245,235,13)">highlight</span>
+<span style="color:#555555">highlight</span>
