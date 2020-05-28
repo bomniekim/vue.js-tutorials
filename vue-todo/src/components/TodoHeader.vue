@@ -9,7 +9,7 @@ export default {};
 </script>
 
 <style scoped>
-/* local style : 현재 component의 element에만 적용됨 */
+/* local style: 현재 component의 element에만 적용됨 */
 h1 {
   color: #2f3b52;
   font-weight: 900;
