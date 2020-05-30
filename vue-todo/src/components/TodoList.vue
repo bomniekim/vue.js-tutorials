@@ -63,7 +63,6 @@ li {
   background: white;
   border-radius: 5px;
 }
-
 .removeBtn {
   margin-left: auto;
   color: tomato;
