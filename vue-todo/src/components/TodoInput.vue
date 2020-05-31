@@ -15,24 +15,26 @@
 export default {
   data: function() {
     return {
-      newTodoItem: ""
+      newTodoItem: "",
     };
   },
   methods: {
     addTodo: function() {
-      // 저장하는 로직 api - localStorage.setItem(key, value);
+      var obj = { completed: false, value: this.newTodoItem };
       if (this.newTodoItem !== "") {
-        // * 확인 필요...
-        localStorage.setItem(this.newTodoItem, this.newTodoItem);
+        // 저장하는 로직 api - localStorage.setItem(key, value);
         // 개발자 도구 > Application > local storage에서 확인
+        localStorage.setItem(this.newTodoItem, JSON.stringify(obj));
+        // JSON.stringify(): 자바스크립트 객체를 String으로 변환해주는 api
+        // 객체를 문자열로 변환하여 저장
         this.clearInput();
       }
     },
     // 메서드 분할
     clearInput: function() {
       this.newTodoItem = ""; // input 값 초기화 꼼수
-    }
-  }
+    },
+  },
 };
 </script>
 
