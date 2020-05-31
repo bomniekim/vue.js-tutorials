@@ -18,8 +18,8 @@ export default {
     "todo-header": TodoHeader,
     "todo-input": TodoInput,
     "todo-list": TodoList,
-    "todo-footer": TodoFooter
-  }
+    "todo-footer": TodoFooter,
+  },
 };
 </script>
 
@@ -38,7 +38,7 @@ button {
   border-style: groove;
 }
 
-/* cascading되어 하위 컴포넌트까지 스타일링 */
+/* cascading: 하위 컴포넌트까지 스타일링 영향 */
 .shadow {
   box-shadow: 5px 10px 10px rbga(0, 0, 0, 0.03);
 }
