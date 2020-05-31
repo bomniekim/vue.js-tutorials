@@ -1,6 +1,7 @@
 <template>
   <div>
     <ul>
+      <!-- presentational component -->
       <!-- vscode에서는 v-for 사용 시 v-bind:key 설정 요구 -->
       <li
         v-for="(item, index) in propsdata"
