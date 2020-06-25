@@ -29,12 +29,12 @@
                 Object.defineProperty(viewModel, 'str', {
                     // 속성에 접근했을 때의 동작을 정의 
                     get: function () {
-                        console.log('접근');
+                        console.log('접근'); // viewModel.str 
 
                     },
                     // 속성에 값을 할당했을 때의 동작을 정의 
                     set: function (newValue) {
-                        console.log('할당', newValue);
+                        console.log('할당', newValue); // viewModel.str = value;
                         render(newValue); // 호이스팅
                     }
                 });
