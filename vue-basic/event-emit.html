@@ -21,6 +21,7 @@
             template: '<button v-on:click="passEvent">click me</button>',
             methods: {
                 passEvent: function () {
+                    // console.log(this); // Vue component
                     this.$emit('pass');
                 }
             }
