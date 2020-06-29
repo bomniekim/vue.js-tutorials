@@ -22,12 +22,12 @@
         var appHeader = {
             // {{}} : data binding
             template: '<h1>{{ propsdata }}</h1>',
-            props: ['propsdata']
+            props: ['propsdata'] // message
         }
 
         var appContent = {
             template: '<div>{{ propsdata }}</div>',
-            props: ['propsdata']
+            props: ['propsdata'] // number
             // 컴포넌트는 각각의 고유한 데이터 유효 범위를 가짐
         }
         new Vue({
