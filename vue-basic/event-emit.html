@@ -11,6 +11,7 @@
     <div id="app">
         <!-- <app-header v-on:하위 컴포넌트에서 발생한 이벤트 이름="상위 컴포넌트의 메서드 이름"></app-header> -->
         <app-header v-on:pass="logText"></app-header>
+        <!-- 'pass'라는 이벤트가 하위에서 올라왔을 때 상위의 메서드 실행 -->
         <p>{{num}}</p>
         <app-content v-on:increase="increaseNum"></app-content>
     </div>
