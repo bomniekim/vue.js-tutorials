@@ -12,8 +12,9 @@
         <!-- <app-header v-on:하위 컴포넌트에서 발생한 이벤트 이름="상위 컴포넌트의 메서드 이름"></app-header> -->
         <app-header @pass="logText"></app-header>
         <!-- 하위에서 'pass'라는 이벤트가 올라왔을 때 상위의 logText() 실행 -->
-        <p>{{num}}</p>
+        <p>{{clickTime}}번째 클릭</p>
         <app-content @increase="increaseNum"></app-content>
+        <p>{{num}}</p>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -48,6 +49,7 @@
             },
             methods: {
                 logText: function () {
+                    this.clickTime++;
                     console.log('hello Vue');
                 },
                 increaseNum: function () {
@@ -57,7 +59,7 @@
 
             },
             data: {
-                text: "번째 클릭",
+                clickTime: 0,
                 num: 10
             }
         })
