@@ -10,9 +10,9 @@
 <body>
     <div id="app">
         <!-- <app-header v-bind:props 속성 이름="상위 컴포넌트의 데이터 이름"></app-header> -->
-        <!-- Root Component의 데이터를 하위 component인 app-header로 내리기 -->
-        <app-header v-bind:p_data="message"></app-header>
-        <app-content v-bind:p_data="number"></app-content>
+        <!-- Root Component의 데이터를 하위 component인 app-header / app-content 로 내리기 -->
+        <app-header :propsdata="message"></app-header>
+        <app-content :propsdata="number"></app-content>
 
     </div>
 
@@ -22,7 +22,7 @@
         var appHeader = {
             // {{}} : data binding
             template: '<h1>{{ p_data }}</h1>',
-            props: ['p_data'] // message
+            props: ['propsdata'] // message
         }
 
         var appContent = {
@@ -39,7 +39,7 @@
             },
             data: {
                 message: 'This is message of Root Component',
-                number: 10
+                number: 331
             }
         })
     </script>
