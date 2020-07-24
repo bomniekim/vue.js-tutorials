@@ -9,7 +9,7 @@
 
 <body>
     <div id="app">
-        <!-- <app-header v-bind:props 속성 이름="상위 컴포넌트의 데이터 이름"></app-header> -->
+        <!-- <app-header v-bind:(하위 컴포넌트) props 속성 이름="상위 컴포넌트의 데이터 이름"></app-header> -->
         <!-- Root Component의 데이터를 하위 component인 app-header / app-content 로 내리기 -->
         <app-header :propsdata="message"></app-header>
         <app-content :propsdata="number"></app-content>
@@ -21,13 +21,13 @@
         // 별도의 변수로 지정
         var appHeader = {
             // {{}} : data binding
-            template: '<h1>{{ p_data }}</h1>',
+            template: '<h1>{{ propsdata }}</h1>',
             props: ['propsdata'] // message
         }
 
         var appContent = {
-            template: '<div>{{ p_data }}</div>',
-            props: ['p_data'] // number
+            template: '<div>{{ propsdata }}</div>',
+            props: ['propsdata'] // number
             // 컴포넌트는 각각의 고유한 데이터 유효 범위를 가짐.
         }
         new Vue({
