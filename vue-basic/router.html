@@ -4,18 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Vue Router</title>
 </head>
 
 <body>
     <div id="app">
         <div>
             <!-- router에서 페이지 이동을 위한 link tag -->
-            <router-link to="/login">Login</router-link>
-            <!-- <a href="/login">Login</a> 위의 코드와 같은 의미 -->
-            <router-link to="/main">Main</router-link>
+            <router-link to="/login">로그인</router-link>
+            <!-- <a href="/login">로그인</a> 위의 코드와 같은 의미 -->
+            <router-link to="/main">메인</router-link>
         </div>
         <router-view></router-view>
+        <!-- router-view는 라우팅 정보가 바뀌면 해당하는 뷰를 그려 다른 화면으로 전환 -->
     </div>
 
     <!-- vue.js CDN -->
@@ -24,31 +25,30 @@
     <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
 
     <script>
-        var LoginComponent = {
+        var Login = {
             template: '<div>login</div>'
         }
-        var MainComponent = {
+        var Main = {
             template: '<div>Main</div>'
         }
-
 
         // VueRouter instance
         var vueRouter = new VueRouter({
             // url # 제거
-            mode: "history",
+            // mode: "history",
             // 페이지의 개수만큼 객체의 개수 필요 
             routes:
-                // 페이지의 라우팅 정보 (배열 타입)
+                // 페이지의 라우팅 정보 (array 타입)
                 [
                     {
                         // 페이지의 url
                         path: '/login',
                         // 해당 url에서 표시될 컴포넌트 (1개)
-                        component: LoginComponent
+                        component: Login
                     },
                     {
                         path: '/main',
-                        component: MainComponent
+                        component: Main
                     }
                 ]
         });
@@ -57,7 +57,7 @@
         // Vue instance
         new Vue({
             el: '#app',
-            // vue instance에 router 연결
+            // vue instance에 router 연결 (해당 범위 안에서만 유효함)
             router: vueRouter
         });
     </script>
