@@ -24,6 +24,7 @@
         <div v-show="loading">
             <!-- v-if/else와의 차이? -->
             <!-- 값이 false인 경우 display: none으로 설정됨 -->
+            <!-- 화면 상에는 보이지 않지만 DOM에는 존재 -->
             v-show test
         </div>
 
@@ -37,7 +38,8 @@
         <!-- v-on: 이벤트 핸들링 -->
         <!-- <button v-on:click="메소드 이름">click me</button> -->
         <button v-on:click="logText">click me</button>
-        <input type="text" v-on:keyup.enter="logText">
+        <input type="text" :keyup.13="logText">
+        <!-- .: event modifier -->
 
     </div>
 
