@@ -30,7 +30,7 @@
             },
             methods: {
                 getData: function () {
-                    var vm = this; // this = Vue
+                    var vm = this; // this == Vue
                     console.log(this);
                     // async using Axios library
                     axios.get('https://jsonplaceholder.typicode.com/users/')
