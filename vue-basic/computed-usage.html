@@ -16,7 +16,9 @@
     <div id="app">
         <!-- 변수를 직접 이용하여 data-binding -->
         <!-- <p v-bind:class="{warning : isError}">Hello Vue.js</p> -->
+        <!-- isError가 true일 땐 warning이 적용 / false이면 적용되지 않음 -->
         <p v-bind:class="errorTextColor">Hello Vue.js</p>
+        <!-- computed 속성을 이용한 클래스 바인딩 -->
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -29,7 +31,7 @@
             computed: {
                 errorTextColor: function () {
                     // 삼항 연산자 이용
-                    // computed의 리턴 값을 통하여 data-binding
+                    // computed의 리턴 값을 통하여 class-binding
                     return this.isError ? 'warning' : null;
                 }
             }
