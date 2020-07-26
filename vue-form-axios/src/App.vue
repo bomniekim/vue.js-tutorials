@@ -1,6 +1,7 @@
 <template>
   <form v-on:submit.prevent="submitForm">
     <!-- Vue event modifier -->
+    <!-- event의 기본적인 동작을 막음 (prevent)  == event.preventDefault()-->
     <div>
       <label for="username">id:</label>
       <input id="username" type="text" v-model="username" />
@@ -20,14 +21,14 @@ import axios from "axios";
 
 export default {
   // 반드시 객체를 return하는 함수
-  data: function() {
+  data: function () {
     return {
       username: "",
       password: "",
     };
   },
   methods: {
-    submitForm: function() {
+    submitForm: function () {
       // event.preventDefault(); // 이벤트의 고유 동작 중단 (Vanilla JS에서 제어하는 방식)
       console.log(this.username, this.password);
 
@@ -41,10 +42,10 @@ export default {
       axios
         .post(url, data)
         // promise 문법
-        .then(function(response) {
+        .then(function (response) {
           console.log(response);
         })
-        .catch(function(error) {
+        .catch(function (error) {
           console.log(error);
         });
     },
