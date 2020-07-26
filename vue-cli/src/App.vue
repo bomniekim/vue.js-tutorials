@@ -16,26 +16,26 @@ var AppHeader = {
   template: '<header><h2>Header</h2></header>'
 }*/
 
-// root component
+// App.vue라는 Root component
 export default {
   // 우선규칙 A
   // 컴포넌트의 data 는 객체(object)를 반환하는 함수!
   // 컴포넌트를 재사용하겠다는 의지, 확률이 높기 때문에 여러 개의 컴포넌트에서 동일한 값을 참조하면 안됨
-  data: function() {
+  data: function () {
     return {
-      str: "data descending"
+      str: "data descending",
     };
   },
 
   components: {
-    "app-header": AppHeader // 2) 변수를 연결
+    "app-header": AppHeader, // 2) 변수를 연결
   },
 
   methods: {
-    renewStr: function() {
+    renewStr: function () {
       this.str = "renew function is implemented";
-    }
-  }
+    },
+  },
 };
 
 // new Vue({
