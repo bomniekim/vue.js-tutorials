@@ -13,7 +13,8 @@
         Data Binding
         {{ }} : Mustache Tag (콧수염 태그) -->
 
-        <p v-bind:id="uuid" v-bind:class="name">{{num}}</p>
+        <p :id="uuid" :class="name">{{num}}</p>
+        <!-- id와 class를 '동적'으로 설정하기 위해 v-bind -->
         <!-- <p id="abc1234">{{num}}</p> -->
         <p>{{doubleNum}}</p>
 
@@ -28,6 +29,7 @@
                 name: 'text-blue',
             },
             // 계산된 속성
+            // 데이터를 조작할 때 
             computed: {
                 doubleNum: function () {
                     return this.num * 2;
