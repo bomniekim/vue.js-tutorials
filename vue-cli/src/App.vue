@@ -3,6 +3,7 @@
   <div>
     {{ str }}
     <!-- <app-header v-bind:컴포넌트의 프롭스 속성 이름="상위 컴포넌트의 데이터 이름"></app-header> -->
+    <!-- <app-header v-bind:컴포넌트의 이벤트 속성 이름="상위 컴포넌트의 메소드 이름"></app-header> -->
     <app-header v-bind:propsdata="str" v-on:renew="renewStr"></app-header>
   </div>
 </template>
