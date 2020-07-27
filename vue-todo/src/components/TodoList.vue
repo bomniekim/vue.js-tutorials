@@ -45,7 +45,8 @@ export default {
       item.completed = !item.completed;
       // 갱신: update하는 api가 존재하지 않기 때문에 지웠다가 새로 설정하는 방법 사용
       localStorage.removeItem(item.value);
-      localStorage.setItem(item.value, JSON.stringify(item)); // {completed: true, value: 공부하기}
+      localStorage.setItem(item.value, JSON.stringify(item));
+      // JSON.stringify(item) = {completed: true, value: 공부하기}
     },
   },
   created: function () {
