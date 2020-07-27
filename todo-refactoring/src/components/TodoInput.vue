@@ -28,29 +28,31 @@
 <script>
 import Modal from "./common/Modal.vue";
 export default {
-  data: function() {
+  data: function () {
     return {
       newTodoItem: "",
-      showModal: false
+      showModal: false,
     };
   },
   methods: {
-    addTodo: function() {
+    addTodo: function () {
       if (this.newTodoItem !== "") {
-        this.$emit("addTodoItem", this.newTodoItem); // 하위 컴포넌트에서의 event emit
+        this.$emit("addTodoItem", this.newTodoItem);
+        // 하위 컴포넌트에서의 event emit
+        // event emit 시 같이 상위로 보낼 인자 this.newTodoItem
         this.clearInput();
       } else {
         this.showModal = !this.showModal;
       }
     },
     // 메서드 분할
-    clearInput: function() {
+    clearInput: function () {
       this.newTodoItem = ""; // input 값 초기화 꼼수
-    }
+    },
   },
   components: {
-    Modal: Modal
-  }
+    Modal: Modal,
+  },
 };
 </script>
 
