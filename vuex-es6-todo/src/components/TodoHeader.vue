@@ -1,12 +1,19 @@
 <template>
   <header>
     <!-- <h1>Vuex ToDo!</h1> -->
-    <h1>{{ this.$store.state.headerText }}</h1>
+    <h1>{{ headerText }}</h1>
   </header>
 </template>
 
 <script>
-export default {};
+import { mapState } from "vuex";
+
+export default {
+  computed: {
+    // computed 내에 state를 선언하는 것을 권장
+    ...mapState(["headerText"]),
+  },
+};
 </script>
 
 <style scoped>
